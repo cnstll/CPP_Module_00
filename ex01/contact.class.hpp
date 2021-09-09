@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 15:21:04 by calle             #+#    #+#             */
-/*   Updated: 2021/09/09 18:39:28 by calle            ###   ########.fr       */
+/*   Created: 2021/09/09 17:54:52 by calle             #+#    #+#             */
+/*   Updated: 2021/09/09 18:37:08 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef CONTACT_CLASS_H
+#define CONTACT_CLASS_H
 
-int main(int argc, char **argv)
-{
-    int i;
+class Contact {
 
-    i = 1;
-    if (argc == 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	private:
 
-    while (argc > 1 && i < argc)
-    {
-        while (*argv[i])
-            std::cout << (unsigned char)std::toupper(*argv[i]++);
-        i++;
-    }
-    std::cout << std::endl;
-    return (0);
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nick_name;
+		std::string	_phone_number;
+		std::string	_darkest_secret;
+		int			_number_of_contacts;
+		std::string _all_contacts[8];
+		
+	public:
+
+		Contact( void ) const;
+		~Contact( void ) const;
 }
+
+#endif
