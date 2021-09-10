@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.class.hpp                                  :+:      :+:    :+:   */
+/*   phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 17:54:52 by calle             #+#    #+#             */
-/*   Updated: 2021/09/10 15:02:28 by calle            ###   ########.fr       */
+/*   Created: 2021/09/10 11:28:59 by calle             #+#    #+#             */
+/*   Updated: 2021/09/10 13:35:20 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-#define CONTACT_CLASS_HPP
+#ifndef PHONEBOOK_CLASS_HPP
+#define PHONEBOOK_CLASS_HPP
 #include <iostream>
 #include <string>
+#include "contact.class.hpp"
 
-class Contact {
+class Phonebook {
 
 	private:
 
-		std::string	_first_name;
-		std::string	_last_name;
-		std::string	_nick_name;
-		std::string	_phone_number;
-		std::string	_secret;
+		Contact _contact[8];
+		int		_current_nb_of_contacts;
 
-		void		_collect_contact_info(std::string field, std::string *field_value);
-		
 	public:
 
-		Contact( void );
-		~Contact( void );
-		void	addContact( int _contact_id );
+		Phonebook( );
+		~Phonebook( );
+		void	addContact();
+		void	searchContact();
 };
 
 #endif
