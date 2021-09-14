@@ -15,13 +15,18 @@
 #include <iostream>
 #include <string>
 #include "contact.class.hpp"
+#include "utils.hpp"
 
 class Phonebook {
 
 	private:
 
 		Contact _contact[8];
-		int		_current_nb_of_contacts;
+		int		_nb_of_contacts;
+
+		void	_display_all_contacts(int nb_of_contacts);	
+		void	_index_look_up(int nb_of_contacts);
+		int		_input_is_valid(std::string  input);
 
 	public:
 

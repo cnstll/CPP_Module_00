@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "contact.class.hpp"
-/*#include "phonebook.class.hpp" */
+#include "phonebook.class.hpp"
 
 static void	welcome_prompt( void )
 {
@@ -20,43 +20,27 @@ static void	welcome_prompt( void )
 	std::cout << "ADD | SEARCH | EXIT" << std::endl; 
 }
 
-static void	init_phonebook(Contact phonebook[8])
-{
-	int	i;
-
-	i = 0; 
-	while (i < 8)
-	{
-		phonebook[i] = Contact();
-		i++;
-	}
-}
-
 int main(void)
 {
 	std::string	input;
-	Contact		phonebook[8];
-	int			contact_id;
+	Phonebook	phonebook;
 
 	welcome_prompt();
-	init_phonebook(phonebook);
-	contact_id = 0;
     while (1 && (!std::cin.eof() || !std::cin.fail()))
     {
 		std::cin.clear();
 		std::cin >> input; 
 		if (input == "ADD")
-		{
-			phonebook[contact_id].addContact(contact_id);
-			contact_id++;
-		}
+			phonebook.addContact();
 		else if (input == "SEARCH")
-			;
+			phonebook.searchContact();
 		else if (input == "EXIT")
 		{
 			std::cout << "See you around ! Bye." << std::endl;
 			break ;
 		}
+		else
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		input.clear();
     }
 	if (std::cin.fail() || std::cin.eof())

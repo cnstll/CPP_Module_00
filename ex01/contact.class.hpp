@@ -13,7 +13,9 @@
 #ifndef CONTACT_CLASS_HPP
 #define CONTACT_CLASS_HPP
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <limits>
 
 class Contact {
 
@@ -25,13 +27,19 @@ class Contact {
 		std::string	_phone_number;
 		std::string	_secret;
 
-		void		_collect_contact_info(std::string field, std::string *field_value);
+		int			_index;
+
+		void	_collect_contact_info(std::string field, std::string *field_value);
+		void	_short_display(std::string to_display);
+		void	_full_display(std::string field, std::string to_display);
 		
 	public:
 
 		Contact( void );
 		~Contact( void );
-		void	addContact( int _contact_id );
+		void	add_contact(int contact_id);
+		void	display_short_contact();	
+		void	display_full_contact();	
 };
 
 #endif
