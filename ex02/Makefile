@@ -1,4 +1,4 @@
-NAME = 
+NAME = Account
 
 SRCS = Account.cpp \
 	   tests.cpp 
