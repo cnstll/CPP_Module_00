@@ -1,9 +1,9 @@
 NAME = awfully_terrible_phone_book
 
 SRCS = main.cpp \
-	   contact.class.cpp \
-	   utils.cpp \
-	   phonebook.class.cpp 
+Contact.cpp \
+Phonebook.cpp \
+utils.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

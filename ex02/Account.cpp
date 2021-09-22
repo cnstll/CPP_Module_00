@@ -6,13 +6,13 @@
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 11:46:51 by calle             #+#    #+#             */
-/*   Updated: 2021/09/15 17:01:01 by calle            ###   ########.fr       */
+/*   Updated: 2021/09/22 18:37:43 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <ctime>
 #include "Account.hpp"
+#include <ctime>
+#include <iostream>
 
 int	Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -28,9 +28,6 @@ Account::Account( int initial_deposit )
 
 	Account::_nbAccounts++;
 	Account::_totalAmount += initial_deposit;
-	Account::getTotalAmount();
-	Account::getNbDeposits();
-	Account::getNbWithdrawals();
 
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex << ";";

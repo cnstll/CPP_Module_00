@@ -6,12 +6,12 @@
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:25:37 by calle             #+#    #+#             */
-/*   Updated: 2021/09/10 15:02:30 by calle            ###   ########.fr       */
+/*   Updated: 2021/09/22 18:16:13 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.class.hpp"
-#include "phonebook.class.hpp"
+#include "Contact.hpp"
+#include "Phonebook.hpp"
 
 static void	welcome_prompt( void )
 {
