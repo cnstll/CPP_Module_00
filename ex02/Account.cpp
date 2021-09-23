@@ -6,12 +6,13 @@
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 11:46:51 by calle             #+#    #+#             */
-/*   Updated: 2021/09/22 18:37:43 by calle            ###   ########.fr       */
+/*   Updated: 2021/09/23 16:29:28 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <ctime>
+#include <iomanip>
 #include <iostream>
 
 int	Account::_nbAccounts = 0;
@@ -65,26 +66,31 @@ int	Account::getNbWithdrawals( void )
 	return (_totalNbWithdrawals);
 }
 
-//void Account::_displayTimestamp( void )
-//{
-//	time_t now = time(0);
-//
-//	tm *ltm = std::localtime(&now);
-//	std::cout << "[";
-//	std::cout << 1900 + ltm->tm_year;
-//	std::cout << 1 + ltm->tm_mon;
-//	std::cout << ltm->tm_mday;
-//	std::cout << "_";
-//  	std::cout << ltm->tm_hour;
-//	std::cout << ltm->tm_min;
-//	std::cout << ltm->tm_sec;
-//	std::cout << "]";
-//}
-
 void Account::_displayTimestamp( void )
 {
-	std::cout << "[19920104_091532]";
+	time_t now = time(0);
+
+	tm *ltm = std::localtime(&now);
+	std::cout << "[";
+	std::cout << 1900 + ltm->tm_year;
+	std::cout << std::setfill ('0') << std::setw (2);
+	std::cout << 1 + ltm->tm_mon;
+	std::cout << std::setfill ('0') << std::setw (2);
+	std::cout << ltm->tm_mday;
+	std::cout << "_";
+	std::cout << std::setfill ('0') << std::setw (2);
+  	std::cout << ltm->tm_hour;
+	std::cout << std::setfill ('0') << std::setw (2);
+	std::cout << ltm->tm_min;
+	std::cout << std::setfill ('0') << std::setw (2);
+	std::cout << ltm->tm_sec;
+	std::cout << "]";
 }
+
+//void Account::_displayTimestamp( void )
+//{
+//	std::cout << "[19920104_091532]";
+//}
 
 void Account::displayAccountsInfos( void )
 {
