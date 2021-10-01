@@ -12,7 +12,7 @@ UNAME_S := $(shell uname -s)
         CC=clang++
     endif
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 .PHONY: all clean fclean re
 
