@@ -5,13 +5,7 @@ SRCS = Account.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-UNAME_S := $(shell uname -s)
-   ifeq ($(UNAME_S),Linux)
-        CC=clang-9++
-	endif
-    ifeq ($(UNAME_S),Darwin)
-        CC=clang++
-    endif
+CC=clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

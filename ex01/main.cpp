@@ -6,12 +6,13 @@
 /*   By: calle <calle@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:25:37 by calle             #+#    #+#             */
-/*   Updated: 2021/09/22 18:16:13 by calle            ###   ########.fr       */
+/*   Updated: 2021/12/13 11:35:40 by calle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
+#include <stdlib.h>
 
 static void	welcome_prompt( void )
 {
@@ -43,10 +44,17 @@ int main(void)
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		input.clear();
     }
-	if (std::cin.fail() || std::cin.eof())
+	if (std::cin.eof())
 	{
 		std::cin.clear();
-		std::cout << "ERROR" << std::endl;
+		std::cout << "Closing.." << std::endl;
+		return (EXIT_SUCCESS);
 	}
-    return (0);
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cerr << "ERROR" << std::endl;
+		return (EXIT_FAILURE);
+	}
+    return (EXIT_SUCCESS);
 }
